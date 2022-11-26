@@ -53,9 +53,33 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "b99b4740-66d9-4886-a5d5-21f3565f5e46": {
+      "type": "flickity-slideshow",
+      "blocks": {
+        "template--16125438001315__b99b4740-66d9-4886-a5d5-21f3565f5e46-16694272615fc6d40c-0": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "template--16125438001315__b99b4740-66d9-4886-a5d5-21f3565f5e46-16694272615fc6d40c-1": {
+          "type": "video",
+          "settings": {
+            "video": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16125438001315__b99b4740-66d9-4886-a5d5-21f3565f5e46-16694272615fc6d40c-0",
+        "template--16125438001315__b99b4740-66d9-4886-a5d5-21f3565f5e46-16694272615fc6d40c-1"
+      ],
+      "settings": {
+        "autoplay": false
+      }
     }
   },
   "order": [
-    "multicolumn"
+    "multicolumn",
+    "b99b4740-66d9-4886-a5d5-21f3565f5e46"
   ]
 }

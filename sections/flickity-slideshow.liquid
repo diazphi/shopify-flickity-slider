@@ -1,0 +1,66 @@
+
+
+{% schema %}
+{
+  "name": "Flickity Slideshow",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Slide Autoplay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enabledbulletnav",
+      "label": "Enabled bullet navigation",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enabledarrownav",
+      "label": "Enabled arrow navigation",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Slide"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "url",
+          "id": "video",
+          "label": "Video Slide"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Flickity Slideshow",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "video"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
