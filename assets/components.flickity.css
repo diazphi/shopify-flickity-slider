@@ -1,0 +1,21 @@
+.carousel .carousel-cell {
+    width: 100%;
+    height: 500px;
+}
+.carousel .carousel-cell img,
+.carousel .carousel-cell video {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+.carousel .carousel-cell.is-selected img {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 1s ease-in-out;
+}
+.carousel .carousel-cell img {
+    opacity: 0.6;
+    transform: scale(1.2);
+    transition: all 1s ease-in-out;
+}

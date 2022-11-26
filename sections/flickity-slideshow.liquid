@@ -1,5 +1,55 @@
-
-
+{{ 'flickity.css' | asset_url | stylesheet_tag }}
+{{ 'flickity.pkgd.min.js' | asset_url | script_tag }}
+{{ 'components.flickity.css' | asset_url | stylesheet_tag }}
+<div class="carousel">
+  {%- for block in section.blocks -%}
+      <div class="carousel-cell">
+          {%- if block.type == 'image' -%}
+              {%- unless block.settings.image == blank %}
+                  {{ block.settings.image | image_url: width: block.settings.image.width | image_tag:
+                      width: block.settings.image.width,
+                      height: block.settings.image.height,
+                      alt: block.settings.image.alt,
+                      loading: 'lazy',
+                      sizes: '100vw'
+                  }}
+              {%- endunless -%}
+          {%- endif -%}
+          {%- if block.type == 'video' -%}
+            {%- unless block.settings.video == blank %}
+                    <video width="800" height="540" controls>
+                      <source src="{{ block.settings.video }}" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+            {%- endunless -%}
+          {%- endif -%}
+      </div>
+  {%- endfor -%}
+</div>
+{%- if section.settings.autoplay %}
+{%- assign autoplaysec = section.settings.autoplaysec | times: 1000 -%}
+{%- else -%}
+{%- assign autoplaysec = false -%}
+{%- endif -%}
+<script>
+var vid = document.querySelector(".carousel .carousel-cell video");
+var flkty = new Flickity( '.carousel', {
+  cellAlign: 'left',
+  contain: true,
+  autoPlay: {{ autoplaysec }},
+  pageDots: {{ section.settings.enabledbulletnav }},
+  prevNextButtons: {{ section.settings.enabledarrownav }},
+  on: {
+    change: function( el,index ) {
+      if(Number(el) == 1) {
+        vid.play();
+      } else {
+        vid.pause();
+      }
+    }
+  }
+});
+</script>
 {% schema %}
 {
   "name": "Flickity Slideshow",
@@ -13,6 +63,15 @@
       "default": false
     },
     {
+      "type": "range",
+      "id": "autoplaysec",
+      "label": "Autoplay in seconds",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    },
+    {
       "type": "checkbox",
       "id": "enabledbulletnav",
       "label": "Enabled bullet navigation",
@@ -24,6 +83,7 @@
       "label": "Enabled arrow navigation",
       "default": true
     }
+
   ],
   "blocks": [
     {

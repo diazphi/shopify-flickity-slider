@@ -60,12 +60,13 @@
         "template--16125438001315__b99b4740-66d9-4886-a5d5-21f3565f5e46-16694272615fc6d40c-0": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/bike-slide.png"
           }
         },
         "template--16125438001315__b99b4740-66d9-4886-a5d5-21f3565f5e46-16694272615fc6d40c-1": {
           "type": "video",
           "settings": {
-            "video": ""
+            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/283725c3b0f543be925e29af228ecddf.mp4"
           }
         }
       },
@@ -74,7 +75,9 @@
         "template--16125438001315__b99b4740-66d9-4886-a5d5-21f3565f5e46-16694272615fc6d40c-1"
       ],
       "settings": {
-        "autoplay": false
+        "autoplay": true,
+        "enabledbulletnav": true,
+        "enabledarrownav": true
       }
     }
   },
